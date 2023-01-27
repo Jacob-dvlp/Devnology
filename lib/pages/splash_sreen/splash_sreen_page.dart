@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'splash_body/app_body_widget.dart';
 import 'splash_sreen_controller.dart';
 
 class SplashSreenPage extends GetView<SplashSreenController> {
@@ -10,10 +11,8 @@ class SplashSreenPage extends GetView<SplashSreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SplashSreenPage'),
-      ),
-      body: Container(),
+      appBar: AppBar(),
+      body: const AppBodyWidget(),
     );
   }
 }
