@@ -18,6 +18,14 @@ class AppTheme {
   );
   static Color background = const Color(0XFF2E3746);
   static Color secondaryColor = const Color(0XFFF9C705);
+  static Color linearGradient1Apparel = const Color(0XFFFF7676);
+  static Color linearGradient2Apparel = const Color(0XFFFFae4e);
+  static Color linearGradient1Beauty = const Color(0XFF76BAFF);
+  static Color linearGradient2Beauty = const Color(0XFF4EFFF8);
+  static Color linearGradient1Shoes = const Color(0XFF2FC145);
+  static Color linearGradient2Shoes = const Color(0XFFB4FF4E);
+  static Color backgroundHome = const Color(0XFFf0f0f0);
+
   static final ThemeData themeData =
       ThemeData(primaryColor: const Color(0XFF2E3746), primarySwatch: _theme);
 }
