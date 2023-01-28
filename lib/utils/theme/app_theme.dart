@@ -16,7 +16,8 @@ class AppTheme {
       900: Color(0XFF000000),
     },
   );
-  static  Color background = const Color(0XFF2E3746);
+  static Color background = const Color(0XFF2E3746);
+  static Color secondaryColor = const Color(0XFFF9C705);
   static final ThemeData themeData =
       ThemeData(primaryColor: const Color(0XFF2E3746), primarySwatch: _theme);
 }
