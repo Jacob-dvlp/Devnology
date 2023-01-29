@@ -8,8 +8,8 @@ import '../pages/detail/detail_bindings.dart';
 import '../pages/detail/detail_page.dart';
 import '../pages/home/home_bindings.dart';
 import '../pages/home/home_page.dart';
-import '../pages/order placed/order_placed_bindings.dart';
-import '../pages/order placed/order_placed_page.dart';
+import '../pages/order_placed/order_placed_bindings.dart';
+import '../pages/order_placed/order_placed_page.dart';
 import '../pages/splash_sreen/splash_sreen_page.dart';
 
 class AppRoutes {

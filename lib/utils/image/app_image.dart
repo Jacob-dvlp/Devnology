@@ -16,4 +16,5 @@ class AppImage {
   static String person = "assets/person.png";
   static String keyboardarrowup = "assets/keyboard_arrow_up.png";
   static String keyboardarrowright = "assets/keyboardarrowright.png";
+  static String check = "assets/check.png";
 }
