@@ -14,4 +14,6 @@ class AppImage {
   static String home = "assets/home_icon.png";
   static String search = "assets/search.png";
   static String person = "assets/person.png";
+  static String keyboardarrowup = "assets/keyboard_arrow_up.png";
+  static String keyboardarrowright = "assets/keyboardarrowright.png";
 }

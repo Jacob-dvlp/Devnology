@@ -17,6 +17,8 @@ class AppTheme {
     },
   );
   static Color background = const Color(0XFF2E3746);
+  static Color backgrounContainer = const Color(0XFF5A6476);
+
   static Color secondaryColor = const Color(0XFFF9C705);
   static Color linearGradient1Apparel = const Color(0XFFFF7676);
   static Color linearGradient2Apparel = const Color(0XFFFFae4e);
