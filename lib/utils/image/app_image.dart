@@ -8,4 +8,6 @@ class AppImage {
   static String iconsBeauty = "assets/icon_beauty.png";
   static String iconsShoes = "assets/icon_shoes.png";
   static String seeall = "assets/see_all.png";
+  static String slider = "assets/slider_img.png";
+  static String pc1 = "assets/pc_1.png";
 }

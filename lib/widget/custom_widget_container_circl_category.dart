@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomWidgetContainerCirclCategory extends StatelessWidget {
   final String title;
@@ -32,7 +33,10 @@ class CustomWidgetContainerCirclCategory extends StatelessWidget {
         const SizedBox(
           height: 8,
         ),
-        Text(isicon ? "See All" : title)
+        Text(
+          isicon ? "See All" : title,
+          style: GoogleFonts.roboto(fontSize: 15, fontWeight: FontWeight.w400),
+        )
       ],
     );
   }

@@ -26,6 +26,8 @@ class AppTheme {
   static Color linearGradient2Shoes = const Color(0XFFB4FF4E);
   static Color backgroundHome = const Color(0XFFf0f0f0);
 
-  static final ThemeData themeData =
-      ThemeData(primaryColor: const Color(0XFF2E3746), primarySwatch: _theme);
+  static final ThemeData themeData = ThemeData(
+    primaryColor: const Color(0XFF2E3746),
+    primarySwatch: _theme,
+  );
 }
