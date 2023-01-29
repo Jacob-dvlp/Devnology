@@ -10,4 +10,8 @@ class AppImage {
   static String seeall = "assets/see_all.png";
   static String slider = "assets/slider_img.png";
   static String pc1 = "assets/pc_1.png";
+  static String menu = "assets/menu.png";
+  static String home = "assets/home_icon.png";
+  static String search = "assets/search.png";
+  static String person = "assets/person.png";
 }

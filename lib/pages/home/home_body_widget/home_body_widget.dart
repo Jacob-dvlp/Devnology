@@ -27,7 +27,7 @@ class HomeBodyWidget extends StatelessWidget {
                 ),
                 HomeBodySlider(),
                 SizedBox(
-                  height: 15,
+                  height: 24,
                 ),
                 HomeBodyList()
               ],

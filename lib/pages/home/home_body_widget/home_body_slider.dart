@@ -24,20 +24,29 @@ class HomeBodySlider extends StatelessWidget {
           ),
           SizedBox(
             width: double.infinity,
-            height: 200,
+            height: 150,
             child: ListView(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.all(14),
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: [
                 SizedBox(
                   child: Image.asset(AppImage.slider),
                 ),
-                SizedBox(
-                  child: Image.asset(AppImage.slider),
+                const SizedBox(
+                  width: 14,
                 ),
                 SizedBox(
                   child: Image.asset(AppImage.slider),
+                ),
+                const SizedBox(
+                  width: 14,
+                ),
+                SizedBox(
+                  child: Image.asset(AppImage.slider),
+                ),
+                const SizedBox(
+                  width: 14,
                 ),
                 SizedBox(
                   child: Image.asset(AppImage.slider),
