@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../detail_controller.dart';
 
 class DetailsBodyHeader extends StatelessWidget {
   const DetailsBodyHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(
+    return Padding(
+      padding: const EdgeInsets.only(
         left: 25,
         right: 25,
         top: 20,
       ),
       child: SizedBox(
-        child: Text(
-          text1,
-          textAlign: TextAlign.justify,
-          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
-        ),
-      ),
+          child: GetBuilder<DetailController>(
+        init: DetailController(),
+        builder: (controller) {
+          return Text(
+            controller.argument[0],
+            textAlign: TextAlign.justify,
+            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+          );
+        },
+      )),
     );
   }
 }

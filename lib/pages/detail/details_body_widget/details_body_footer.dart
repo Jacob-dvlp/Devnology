@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../detail_controller.dart';
 
 class DetailsBodyFooter extends StatelessWidget {
   const DetailsBodyFooter({Key? key}) : super(key: key);
@@ -11,29 +14,38 @@ class DetailsBodyFooter extends StatelessWidget {
         right: 25,
         top: 20,
       ),
-      child:
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
-        Text(
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text(
           "Price:",
           textAlign: TextAlign.justify,
           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
-        Text(
-          "\$ 1,519.99",
-          textAlign: TextAlign.justify,
-          style: TextStyle(fontWeight: FontWeight.w900, fontSize: 26),
+        GetBuilder<DetailController>(
+          init: DetailController(),
+          builder: (controller) {
+            return Text(
+              "\$ ${controller.argument[2]}",
+              textAlign: TextAlign.justify,
+              style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 26),
+            );
+          },
         ),
-        SizedBox(
+        const SizedBox(
           height: 16,
         ),
-        Text(
-          text1,
-          textAlign: TextAlign.justify,
-          style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
-        ),
+        GetBuilder<DetailController>(
+          init: DetailController(),
+          builder: (controller) {
+            return Text(
+              controller.argument[1],
+              textAlign: TextAlign.justify,
+              style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+            );
+          },
+        )
       ]),
     );
   }

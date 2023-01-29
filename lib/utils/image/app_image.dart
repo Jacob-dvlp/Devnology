@@ -17,4 +17,6 @@ class AppImage {
   static String keyboardarrowup = "assets/keyboard_arrow_up.png";
   static String keyboardarrowright = "assets/keyboardarrowright.png";
   static String check = "assets/check.png";
+  static String pc2 = "assets/pc_2.png";
+  static String pc3 = "assets/pc_3.png";
 }
