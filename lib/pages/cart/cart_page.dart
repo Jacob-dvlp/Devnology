@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../widget/custom_app_bar.dart';
+import '../../widget/custom_bottom_navigation_bar.dart';
+import '../bottom_navigator_bar/bottom_navigator_bar_controller.dart';
+import '../home/home_page.dart';
 import 'cart_controller.dart';
 
 class CartPage extends GetView<CartController> {
@@ -9,12 +12,20 @@ class CartPage extends GetView<CartController> {
   static String routeName = '/cart';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(
-        isCart: false,
-        flag: true,
-      ),
-      body: Container(),
+    return GetBuilder<BottomNavigatorBarController>(
+      init: BottomNavigatorBarController(),
+      builder: (controller) {
+        return Scaffold(
+          appBar: const CustomAppBar(
+            isCart: false,
+            flag: true,
+          ),
+          extendBodyBehindAppBar: true,
+          bottomNavigationBar:
+              CustomBottomNavigationBar(controller: controller),
+          body: controller.isCart ? Container() : const HomePage(),
+        );
+      },
     );
   }
 }

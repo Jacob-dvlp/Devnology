@@ -1,8 +1,14 @@
 import 'package:get/get.dart';
 
+import '../pages/bottom_navigator_bar/bottom_navigator_bar_bindings.dart';
+import '../pages/bottom_navigator_bar/bottom_navigator_bar_page.dart';
+import '../pages/cart/cart_bindings.dart';
 import '../pages/cart/cart_page.dart';
+import '../pages/detail/detail_bindings.dart';
 import '../pages/detail/detail_page.dart';
+import '../pages/home/home_bindings.dart';
 import '../pages/home/home_page.dart';
+import '../pages/order placed/order_placed_bindings.dart';
 import '../pages/order placed/order_placed_page.dart';
 import '../pages/splash_sreen/splash_sreen_page.dart';
 
@@ -13,20 +19,24 @@ class AppRoutes {
       page: () => const SplashSreenPage(),
     ),
     GetPage(
-      name: HomePage.routeName,
-      page: () => const HomePage(),
-    ),
+        name: BottomNavigatorBarPage.routeName,
+        page: () => const BottomNavigatorBarPage(),
+        binding: BottomNavigatorBarBindings()),
     GetPage(
-      name: DetailPage.routeName,
-      page: () => const DetailPage(),
-    ),
+        name: HomePage.routeName,
+        page: () => const HomePage(),
+        binding: HomeBindings()),
     GetPage(
-      name: CartPage.routeName,
-      page: () => const CartPage(),
-    ),
+        name: DetailPage.routeName,
+        page: () => const DetailPage(),
+        binding: DetailBindings()),
     GetPage(
-      name: OrderPlacedPage.routeName,
-      page: () => const OrderPlacedPage(),
-    ),
+        name: CartPage.routeName,
+        page: () => const CartPage(),
+        binding: CartBindings()),
+    GetPage(
+        name: OrderPlacedPage.routeName,
+        page: () => const OrderPlacedPage(),
+        binding: OrderPlacedBindings()),
   ];
 }

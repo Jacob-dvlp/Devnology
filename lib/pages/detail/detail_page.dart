@@ -5,6 +5,8 @@ import '../../utils/image/app_image.dart';
 import '../../utils/theme/app_theme.dart';
 import '../../widget/custom_app_bar.dart';
 import '../../widget/custom_container_details.dart';
+import '../bottom_navigator_bar/bottom_navigator_bar_controller.dart';
+import '../cart/cart_page.dart';
 import 'detail_controller.dart';
 import 'details_body_widget/details_body_footer.dart';
 import 'details_body_widget/details_body_header.dart';
@@ -35,11 +37,23 @@ class DetailPage extends GetView<DetailController> {
                   img: AppImage.keyboardarrowup,
                   colorText: AppTheme.background,
                   color: Colors.white),
-              CustomContainerDetails(
-                name: "ADD TO CART",
-                img: AppImage.keyboardarrowright,
-                color: AppTheme.background,
-                colorText: Colors.white,
+              GetBuilder<BottomNavigatorBarController>(
+                init: BottomNavigatorBarController(),
+                builder: (controller) {
+                  return GestureDetector(
+                    onTap: () {
+                      Get.toNamed(CartPage.routeName);
+                      controller.isCart = true;
+                      controller.isHomePage = false;
+                    },
+                    child: CustomContainerDetails(
+                      name: "ADD TO CART",
+                      img: AppImage.keyboardarrowright,
+                      color: AppTheme.background,
+                      colorText: Colors.white,
+                    ),
+                  );
+                },
               )
             ],
           ),
