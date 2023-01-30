@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../model/model_produt.dart';
 import '../pages/detail/detail_page.dart';
+import '../utils/format_number_currency.dart';
 
 class CustomCardWidget extends StatelessWidget {
   final ModelProdut modelProdut;
@@ -43,7 +45,7 @@ class CustomCardWidget extends StatelessWidget {
                           const EdgeInsets.only(left: 8, right: 8, top: 25),
                       child: Text(
                         modelProdut.name,
-                        style: const TextStyle(fontWeight: FontWeight.w300),
+                        style: GoogleFonts.roboto(fontWeight: FontWeight.w300),
                       ),
                     ),
                     const SizedBox(
@@ -52,9 +54,9 @@ class CustomCardWidget extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8, top: 2),
                       child: Text(
-                        "\$ ${modelProdut.price.toString()}",
+                        FormatDoubleToCurrency.convertDouble(modelProdut.price),
                         textAlign: TextAlign.start,
-                        style: const TextStyle(
+                        style: GoogleFonts.roboto(
                           fontWeight: FontWeight.bold,
                         ),
                       ),

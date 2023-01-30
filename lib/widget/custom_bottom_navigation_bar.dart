@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../model/model_produt.dart';
 import '../utils/image/app_image.dart';
@@ -41,7 +42,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                     ),
                     Text(
                       "Home",
-                      style: TextStyle(
+                      style: GoogleFonts.roboto(
                         color: controller.isHomePage
                             ? AppTheme.secondaryColor
                             : Colors.white,
@@ -59,9 +60,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 const SizedBox(
                   height: 4.0,
                 ),
-                const Text(
+                Text(
                   "Search",
-                  style: TextStyle(color: Colors.white),
+                  style: GoogleFonts.roboto(color: Colors.white),
                 )
               ],
             ),
@@ -92,7 +93,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 ModelProdut.modelProdut.length.toString(),
-                                style: const TextStyle(
+                                style: GoogleFonts.roboto(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w900),
                               )),
@@ -104,7 +105,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                     ),
                     Text(
                       "Cart",
-                      style: TextStyle(
+                      style: GoogleFonts.roboto(
                           color: controller.isCart
                               ? AppTheme.secondaryColor
                               : Colors.white),
@@ -121,24 +122,24 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 const SizedBox(
                   height: 4.0,
                 ),
-                const Text(
+                Text(
                   "Profile",
-                  style: TextStyle(color: Colors.white),
+                  style: GoogleFonts.roboto(color: Colors.white),
                 ),
               ],
             ),
             Column(
-              children: const [
-                Icon(
+              children: [
+                const Icon(
                   Icons.menu,
                   color: Colors.white,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4.0,
                 ),
                 Text(
                   "Menu",
-                  style: TextStyle(color: Colors.white),
+                  style: GoogleFonts.roboto(color: Colors.white),
                 )
               ],
             ),

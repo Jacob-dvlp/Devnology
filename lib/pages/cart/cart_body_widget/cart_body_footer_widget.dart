@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import '../../../utils/format_number_currency.dart';
 import '../../../utils/image/app_image.dart';
 import '../../../utils/theme/app_theme.dart';
 import '../../../widget/custom_container_details.dart';
@@ -24,9 +26,9 @@ class CartBodyFooterWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     "Total",
-                    style: TextStyle(
+                    style: GoogleFonts.roboto(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                         color: Colors.white),
@@ -35,8 +37,9 @@ class CartBodyFooterWidget extends StatelessWidget {
                     init: CartController(),
                     builder: (controller) {
                       return Text(
-                        "\$ ${controller.totalPrice}",
-                        style: const TextStyle(
+                        FormatDoubleToCurrency.convertDouble(
+                            controller.totalPrice),
+                        style: GoogleFonts.roboto(
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
                             color: Colors.white),

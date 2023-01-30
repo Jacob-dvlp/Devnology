@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../utils/image/app_image.dart';
 import '../../utils/theme/app_theme.dart';
@@ -10,8 +11,9 @@ import '../cart/cart_page.dart';
 import 'detail_controller.dart';
 import 'details_body_widget/details_body_footer.dart';
 import 'details_body_widget/details_body_header.dart';
+import 'details_body_widget/details_body_slider.dart';
 
-class DetailPage extends GetView<DetailController> {
+class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
   static String routeName = '/detail';
   @override
@@ -32,11 +34,17 @@ class DetailPage extends GetView<DetailController> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomContainerDetails(
-                  name: "SHARE THIS",
-                  img: AppImage.keyboardarrowup,
-                  colorText: AppTheme.background,
-                  color: Colors.white),
+              GestureDetector(
+                onTap: () {
+                  Share.share("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSOVAuvHLtFrapM1jNQDgt4HE9jOuq-ynhAQ&usqp=CAU",
+                      subject: "");
+                },
+                child: CustomContainerDetails(
+                    name: "SHARE THIS",
+                    img: AppImage.keyboardarrowup,
+                    colorText: AppTheme.background,
+                    color: Colors.white),
+              ),
               GetBuilder<BottomNavigatorBarController>(
                 init: BottomNavigatorBarController(),
                 builder: (controller) {
@@ -61,15 +69,12 @@ class DetailPage extends GetView<DetailController> {
       ),
       body: Column(
         children: [
-          const DetailsBodyHeader(),
-          SizedBox(
-            child: Image.asset(
-              AppImage.pc1,
-              width: 200,
-              height: 200,
-              scale: 0.10,
-              //scale: 0.9,
-            ),
+          const Flexible(child: DetailsBodyHeader()),
+          GetBuilder<DetailController>(
+            init: DetailController(),
+            builder: (controller) {
+              return DetailsBodySlider(controller: controller);
+            },
           ),
           const DetailsBodyFooter()
         ],

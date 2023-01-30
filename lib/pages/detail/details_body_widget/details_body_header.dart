@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/model_produt.dart';
 import '../detail_controller.dart';
@@ -23,14 +24,10 @@ class DetailsBodyHeader extends StatelessWidget {
           return Text(
             subtitle.subtitle,
             textAlign: TextAlign.justify,
-            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+            style:   GoogleFonts.roboto(fontWeight: FontWeight.w700, fontSize: 15),
           );
         },
       )),
     );
   }
 }
-
-const text1 = """
-Lenovo 15.6" ThinkPad P15s Gen 1 Laptop, Intel Core i7-10510U Quad-Core, 16GB DDR4 RAM, 512GB SSD, NVIDIA Quadro P520, Windows 10 Pro (20T4001VUS)
-""";

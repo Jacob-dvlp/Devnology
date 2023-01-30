@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomContainerDetails extends StatelessWidget {
   final String name;
@@ -28,7 +29,7 @@ class CustomContainerDetails extends StatelessWidget {
           children: [
             Text(
               name,
-              style: TextStyle(
+              style:  GoogleFonts.roboto(
                   color: colorText, fontSize: 12, fontWeight: FontWeight.w900),
             ),
             Image.asset(img)

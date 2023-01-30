@@ -19,4 +19,7 @@ class AppImage {
   static String check = "assets/check.png";
   static String pc2 = "assets/pc_2.png";
   static String pc3 = "assets/pc_3.png";
+  static String slider1 = "assets/image_slider.jpeg";
+  static String slider2 = "assets/image_slider2.jpeg";
+  static String slider3 = "assets/image_slider1.jpg";
 }

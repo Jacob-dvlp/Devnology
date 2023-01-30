@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utils/image/app_image.dart';
 import '../../../utils/theme/app_theme.dart';
@@ -11,8 +12,6 @@ class OrderPlacedBodyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-
-      /// crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Center(
           child: Container(
@@ -24,18 +23,19 @@ class OrderPlacedBodyWidget extends StatelessWidget {
             child: Image.asset(AppImage.check),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 30),
+        Padding(
+          padding: const EdgeInsets.only(top: 30),
           child: Text(
             "Order Placed!",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+            style:
+                GoogleFonts.roboto(fontSize: 30, fontWeight: FontWeight.w700),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 23, right: 45, left: 40),
+        Padding(
+          padding: const EdgeInsets.only(top: 23, right: 45, left: 40),
           child: Text(
             text1,
-            style: TextStyle(
+            style: GoogleFonts.roboto(
               fontSize: 14,
               fontWeight: FontWeight.w400,
             ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../model/model_produt.dart';
+import '../../../utils/format_number_currency.dart';
 import '../detail_controller.dart';
 
 class DetailsBodyFooter extends StatelessWidget {
@@ -13,13 +15,13 @@ class DetailsBodyFooter extends StatelessWidget {
       padding: const EdgeInsets.only(
         left: 20,
         right: 25,
-        top: 20,
+        top: 10,
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Text(
+        Text(
           "Price:",
           textAlign: TextAlign.justify,
-          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+          style: GoogleFonts.roboto(fontWeight: FontWeight.w700, fontSize: 15),
         ),
         const SizedBox(
           height: 10,
@@ -29,14 +31,24 @@ class DetailsBodyFooter extends StatelessWidget {
           builder: (controller) {
             final ModelProdut price = controller.argument[0];
             return Text(
-              "\$ ${price.price}",
+              FormatDoubleToCurrency.convertDouble(price.price)
+                  .toString(),
               textAlign: TextAlign.justify,
-              style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 26),
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.w900, fontSize: 26),
             );
           },
         ),
         const SizedBox(
-          height: 16,
+          height: 14,
+        ),
+        Text("About this item:",
+            style: GoogleFonts.roboto(
+              fontWeight: FontWeight.w700,
+              fontSize: 15,
+            )),
+        const SizedBox(
+          height: 10,
         ),
         GetBuilder<DetailController>(
           init: DetailController(),
@@ -46,7 +58,8 @@ class DetailsBodyFooter extends StatelessWidget {
             return Text(
               content.content,
               textAlign: TextAlign.justify,
-              style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+              style:
+                  GoogleFonts.roboto(fontWeight: FontWeight.w400, fontSize: 14),
             );
           },
         )
@@ -54,4 +67,3 @@ class DetailsBodyFooter extends StatelessWidget {
     );
   }
 }
-
