@@ -17,6 +17,7 @@ class CartPage extends GetView<CartController> {
       init: BottomNavigatorBarController(),
       builder: (controller) {
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: const CustomAppBar(
             isCart: false,
             flag: true,

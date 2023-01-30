@@ -14,11 +14,8 @@ class CustomCardWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 23.0, left: 11.0),
       child: GestureDetector(
-        onTap: () => Get.toNamed(DetailPage.routeName, arguments: [
-          modelProdut.subtitle,
-          modelProdut.content,
-          modelProdut.price
-        ]),
+        onTap: () =>
+            Get.toNamed(DetailPage.routeName, arguments: [modelProdut]),
         child: Container(
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -55,7 +52,7 @@ class CustomCardWidget extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8, top: 2),
                       child: Text(
-                        "\$ ${modelProdut.price}",
+                        "\$ ${modelProdut.price.toString()}",
                         textAlign: TextAlign.start,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,

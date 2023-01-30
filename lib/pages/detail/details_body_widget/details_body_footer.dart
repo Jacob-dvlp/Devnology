@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../model/model_produt.dart';
 import '../detail_controller.dart';
 
 class DetailsBodyFooter extends StatelessWidget {
@@ -26,8 +27,9 @@ class DetailsBodyFooter extends StatelessWidget {
         GetBuilder<DetailController>(
           init: DetailController(),
           builder: (controller) {
+            final ModelProdut price = controller.argument[0];
             return Text(
-              "\$ ${controller.argument[2]}",
+              "\$ ${price.price}",
               textAlign: TextAlign.justify,
               style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 26),
             );
@@ -39,8 +41,10 @@ class DetailsBodyFooter extends StatelessWidget {
         GetBuilder<DetailController>(
           init: DetailController(),
           builder: (controller) {
+            final ModelProdut content = controller.argument[0];
+
             return Text(
-              controller.argument[1],
+              content.content,
               textAlign: TextAlign.justify,
               style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
             );
@@ -51,14 +55,3 @@ class DetailsBodyFooter extends StatelessWidget {
   }
 }
 
-const text1 = """
-1.8 GHz Intel Core i7-10510U Quad-Core Processor
-16GB of DDR4 RAM | 512GB SSD
-15.6" 1920 x 1080 IPS Display
-NVIDIA Quadro P520
-Windows 10 Pro 64-Bit Edition
-1.8 GHz Intel Core i7-10510U Quad-Core Processor
-16GB of DDR4 RAM | 512GB SSD
-15.6" 1920 x 1080 IPS Display
-NVIDIA Quadro P520
-""";

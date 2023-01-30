@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../model/model_produt.dart';
 import '../utils/image/app_image.dart';
 import '../utils/theme/app_theme.dart';
 
@@ -70,11 +71,33 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 },
                 child: Column(
                   children: [
-                    Icon(
-                      Icons.shopping_cart_outlined,
-                      color: controller.isCart
-                          ? AppTheme.secondaryColor
-                          : Colors.white,
+                    Stack(
+                      children: [
+                        Icon(
+                          Icons.shopping_cart_outlined,
+                          color: controller.isCart
+                              ? AppTheme.secondaryColor
+                              : Colors.white,
+                        ),
+                        Positioned(
+                            bottom: 0,
+                            right: 0,
+                            left: 10,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: AppTheme.secondaryColor,
+                                  borderRadius: BorderRadius.circular(100)),
+                              width: 15,
+                              height: 15,
+                              child: Center(
+                                  child: Text(
+                                ModelProdut.modelProdut.length.toString(),
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w900),
+                              )),
+                            )),
+                      ],
                     ),
                     const SizedBox(
                       height: 4.0,

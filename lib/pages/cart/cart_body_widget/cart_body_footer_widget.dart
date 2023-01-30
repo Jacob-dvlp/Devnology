@@ -5,6 +5,7 @@ import '../../../utils/image/app_image.dart';
 import '../../../utils/theme/app_theme.dart';
 import '../../../widget/custom_container_details.dart';
 import '../../order_placed/order_placed_page.dart';
+import '../cart_controller.dart';
 
 class CartBodyFooterWidget extends StatelessWidget {
   const CartBodyFooterWidget({Key? key}) : super(key: key);
@@ -19,24 +20,31 @@ class CartBodyFooterWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  "Total",
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white),
-                ),
-                Text(
-                  "\$ 2,237.79",
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white),
-                )
-              ],
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Total",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white),
+                  ),
+                  GetBuilder<CartController>(
+                    init: CartController(),
+                    builder: (controller) {
+                      return Text(
+                        "\$ ${controller.totalPrice}",
+                        style: const TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white),
+                      );
+                    },
+                  )
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 23),

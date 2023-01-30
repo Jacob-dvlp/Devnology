@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../model/model_produt.dart';
 import '../utils/image/app_image.dart';
 import '../utils/theme/app_theme.dart';
 
@@ -90,10 +91,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                                       borderRadius: BorderRadius.circular(100)),
                                   width: 18,
                                   height: 18,
-                                  child: const Center(
+                                  child: Center(
                                       child: Text(
-                                    "5",
-                                    style: TextStyle(
+                                    ModelProdut.modelProdut.length.toString(),
+                                    style: const TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w900),
                                   )),

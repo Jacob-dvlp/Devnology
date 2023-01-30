@@ -5,7 +5,7 @@ import '../../../model/model_produt.dart';
 import '../../../widget/custom_card_widget.dart';
 import '../home_controller.dart';
 
-class HomeBodyList extends StatelessWidget {
+class HomeBodyList extends GetView<HomeController> {
   const HomeBodyList({Key? key}) : super(key: key);
 
   @override
@@ -17,13 +17,13 @@ class HomeBodyList extends StatelessWidget {
           init: HomeController(),
           builder: (controller) {
             return ListView.builder(
-              itemCount: controller.model.length,
+              itemCount: controller.modelProdut.length,
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                final ModelProdut modelProdut = controller.model[index];
+                final ModelProdut model = controller.modelProdut[index];
                 return CustomCardWidget(
-                  modelProdut: modelProdut,
+                  modelProdut: model,
                 );
               },
             );

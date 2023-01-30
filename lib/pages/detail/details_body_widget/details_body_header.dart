@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../model/model_produt.dart';
 import '../detail_controller.dart';
 
 class DetailsBodyHeader extends StatelessWidget {
@@ -18,8 +19,9 @@ class DetailsBodyHeader extends StatelessWidget {
           child: GetBuilder<DetailController>(
         init: DetailController(),
         builder: (controller) {
+          final ModelProdut subtitle = controller.argument[0];
           return Text(
-            controller.argument[0],
+            subtitle.subtitle,
             textAlign: TextAlign.justify,
             style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
           );

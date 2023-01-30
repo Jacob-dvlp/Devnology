@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'home_body_widget/home_body_widget.dart';
-import 'home_controller.dart';
 
-class HomePage extends GetView<HomeController> {
+class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   static String routeName = "/home";
   @override
