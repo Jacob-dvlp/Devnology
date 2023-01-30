@@ -21,8 +21,6 @@ class DetailsBodySlider extends StatelessWidget {
                         Image.asset(
                           item,
                           fit: BoxFit.cover,
-
-                          //  scale: 0.10,
                         ),
                       ],
                     )),

@@ -42,14 +42,15 @@ class CustomCardWidget extends StatelessWidget {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsets.only(left: 8, right: 8, top: 25),
+                          const EdgeInsets.only(left: 8, right: 8, top: 15),
                       child: Text(
                         modelProdut.name,
-                        style: GoogleFonts.roboto(fontWeight: FontWeight.w300),
+                        style: GoogleFonts.roboto(
+                            fontWeight: FontWeight.w300, fontSize: 15),
                       ),
                     ),
                     const SizedBox(
-                      height: 4,
+                      height: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8, right: 8, top: 2),
@@ -57,7 +58,7 @@ class CustomCardWidget extends StatelessWidget {
                         FormatDoubleToCurrency.convertDouble(modelProdut.price),
                         textAlign: TextAlign.start,
                         style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     )
